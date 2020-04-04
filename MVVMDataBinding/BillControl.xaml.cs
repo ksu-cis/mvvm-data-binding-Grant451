@@ -15,25 +15,30 @@ using CashRegister;
 namespace MVVMDataBinding
 {
     /// <summary>
-    /// Interaction logic for CoinControl.xaml
+    /// Interaction logic for BillControl.xaml
     /// </summary>
-    public partial class CoinControl : UserControl
+    public partial class BillControl : UserControl
     {
-        public static readonly DependencyProperty DenominationProperty =
+        public BillControl()
+        {
+            InitializeComponent();
+        }
+
+        public static readonly DependencyProperty DenominationOfBillsProperty =
             DependencyProperty.Register(
-                "Denomination",
-                typeof(Coins),
+                "DenominationOfBills",
+                typeof(Bills),
                 typeof(CoinControl),
-                new PropertyMetadata(Coins.Penny)
+                new PropertyMetadata(Bills.One)
                 );
 
         /// <summary>
         /// The Denominstion this control displays and modifies 
         /// </summary>
-        public Coins Denomination
+        public Bills DenominationOfBills
         {
-            get { return (Coins)GetValue(DenominationProperty); }
-            set { SetValue(DenominationProperty,value); }
+            get { return (Bills)GetValue(DenominationOfBillsProperty); }
+            set { SetValue(DenominationOfBillsProperty, value); }
         }
 
         /// <summary>
@@ -52,11 +57,6 @@ namespace MVVMDataBinding
         {
             get => (int)GetValue(QuantityProperty);
             set => SetValue(QuantityProperty, value);
-        }
-
-        public CoinControl()
-        {
-            InitializeComponent();
         }
 
         private void OnIncreaseClicked(object sender, RoutedEventArgs e)

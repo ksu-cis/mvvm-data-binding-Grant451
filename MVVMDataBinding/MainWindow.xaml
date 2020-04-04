@@ -5,8 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MVVMDataBinding"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="900">
     <Grid>
-
+        <local:CashRegisterControl>
+            <local:CashRegisterControl.DataContext>
+                <local:CashRegisterModeView/>
+            </local:CashRegisterControl.DataContext>
+        </local:CashRegisterControl>
     </Grid>
 </Window>

@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="MVVMDataBinding.CashRegisterControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MVVMDataBinding"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+                <!--
+                <local:BillControl DenominationOfBills="One" Quantity="{Binding Path=Ones}"/>
+                <local:BillControl DenominationOfBills="Five" Quantity="{Binding Path=Five}"/>
+                <local:BillControl DenominationOfBills="Ten" Quantity="{Binding Path=Ten}"/>
+                <local:BillControl DenominationOfBills="Twenty" Quantity="{Binding Path=Twenty}"/>
+                <local:BillControl DenominationOfBills="Fifty" Quantity="{Binding Path=Fifty}"/>
+                <local:BillControl DenominationOfBills="Hundred" Quantity="{Binding Path=Hundred}"/>
+                -->
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="1">
+            <local:CoinControl Denomination="Penny" Quantity="{Binding Path=Pennies}"/>
+            <local:CoinControl Denomination="Nickel" Quantity="{Binding Path=Nickeles}"/>
+                <local:CoinControl Denomination="Dime" Quantity="{Binding Path=Dimes}"/>
+                <local:CoinControl Denomination="Quarter" Quantity="{Binding Path=Quarters}"/>
+                <local:CoinControl Denomination="HalfDollar" Quantity="{Binding Path=HalfDollar}"/>
+                <local:CoinControl Denomination="Dollar" Quantity="{Binding Path=Dollar}"/>
+                <!--<local:BillControl Denomination="One" Quantity="{Binding Path=Ones}"/>-->
+            </StackPanel>
+        </Grid>
+</UserControl>

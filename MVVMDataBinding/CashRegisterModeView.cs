@@ -76,6 +76,32 @@ namespace MVVMDataBinding
             }
         }
 
+        public int HalfDollars
+        {
+            get => drawer.HalfDollars;
+            set
+            {
+                if (drawer.HalfDollars == value || value < 0) return;
+                var quantity = value - drawer.HalfDollars;
+                if (quantity > 0) drawer.AddCoin(Coins.HalfDollar, quantity);
+                else drawer.RemoveCoin(Coins.HalfDollar, -quantity);
+                InvokePropertyChanged("HalfDollar");
+            }
+        }
+
+        public int Dollars
+        {
+            get => drawer.Dollars;
+            set
+            {
+                if (drawer.Dollars == value || value < 0) return;
+                var quantity = value - drawer.Dollars;
+                if (quantity > 0) drawer.AddCoin(Coins.Dollar, quantity);
+                else drawer.RemoveCoin(Coins.Dollar, -quantity);
+                InvokePropertyChanged("Dollar");
+            }
+        }
+
         public int Ones
         {
             get => drawer.Ones;
