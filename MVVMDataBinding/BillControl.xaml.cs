@@ -23,22 +23,23 @@ namespace MVVMDataBinding
         {
             InitializeComponent();
         }
+        
 
-        public static readonly DependencyProperty DenominationOfBillsProperty =
+        public static readonly DependencyProperty DenominationProperty =
             DependencyProperty.Register(
-                "DenominationOfBills",
+                "Denomination",
                 typeof(Bills),
-                typeof(CoinControl),
+                typeof(BillControl),
                 new PropertyMetadata(Bills.One)
                 );
 
         /// <summary>
         /// The Denominstion this control displays and modifies 
         /// </summary>
-        public Bills DenominationOfBills
+        public Bills Denomination
         {
-            get { return (Bills)GetValue(DenominationOfBillsProperty); }
-            set { SetValue(DenominationOfBillsProperty, value); }
+            get { return (Bills)GetValue(DenominationProperty); }
+            set { SetValue(DenominationProperty, value); }
         }
 
         /// <summary>
@@ -48,7 +49,7 @@ namespace MVVMDataBinding
             DependencyProperty.Register(
                 "Quantity",
                 typeof(int),
-                typeof(CoinControl),
+                typeof(BillControl),
                 new FrameworkPropertyMetadata(0, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault)
                 );
 
@@ -69,5 +70,6 @@ namespace MVVMDataBinding
         {
             Quantity--;
         }
+        
     }
 }
