@@ -26,8 +26,8 @@
             <local:CoinControl Denomination="Nickel" Quantity="{Binding Path=Nickeles}"/>
                 <local:CoinControl Denomination="Dime" Quantity="{Binding Path=Dimes}"/>
                 <local:CoinControl Denomination="Quarter" Quantity="{Binding Path=Quarters}"/>
-                <local:CoinControl Denomination="HalfDollar" Quantity="{Binding Path=HalfDollar}"/>
-                <local:CoinControl Denomination="Dollar" Quantity="{Binding Path=Dollar}"/>
+                <local:CoinControl Denomination="HalfDollar" Quantity="{Binding Path=HalfDollars}"/>
+                <local:CoinControl Denomination="Dollar" Quantity="{Binding Path=Dollars}"/>
                 <!--<local:BillControl Denomination="One" Quantity="{Binding Path=Ones}"/>-->
             </StackPanel>
         </Grid>
